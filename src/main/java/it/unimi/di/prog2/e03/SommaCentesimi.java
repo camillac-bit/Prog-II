@@ -21,6 +21,8 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e03;
 
+import java.util.Scanner;
+
 /** Classe per la somma di importi in centesimi. */
 public class SommaCentesimi {
 
@@ -32,4 +34,23 @@ public class SommaCentesimi {
    * centesimi (uno per riga, con la parte decimale separata dalla parte intera da un punto) e ne
    * emetta nel flusso d'uscita la somma.
    */
+  public static void main(String[] args){
+    int tot_cent = 0;
+
+    try(Scanner sc = new Scanner(System.in)){
+      while(sc.hasNextLine()){
+        String importo = sc.nextLine().trim();
+        if (importo.isEmpty()) {
+          continue;
+        }
+        String[] parti = importo.split("\\.");
+        tot_cent += 100 * Integer.parseInt(parti[0]) + Integer.parseInt(parti[1]);
+      }
+      
+    }
+    System.out.println(tot_cent/100 + (tot_cent%100/10==0 ? ".0" : "." ) + tot_cent%100);
+    
+  }
 }
+
+
