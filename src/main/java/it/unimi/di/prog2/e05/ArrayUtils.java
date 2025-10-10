@@ -25,12 +25,33 @@ package it.unimi.di.prog2.e05;
 public class ArrayUtils {
 
   /** . */
-  private ArrayUtils() {}
+  private ArrayUtils() {
+  }
 
   /*
    * Specify and implement a method that given a sorted array of integers and a
    * value, returns the index of the value if it is present in the array.
    *
-   * Hint: https://research.google/blog/extra-extra-read-all-about-it-nearly-all-binary-searches-and-mergesorts-are-broken/
+   * Hint:
+   * https://research.google/blog/extra-extra-read-all-about-it-nearly-all-binary-
+   * searches-and-mergesorts-are-broken/
    */
+  public static int ricercaBinaria(int[] num, int x) {
+    int sx = 0;
+    int dx = num.length;
+    int pos = -1;
+
+    while (sx < dx && pos == -1) {
+      int m = (sx + dx) / 2;
+      if (num[m] == x) {
+        pos = m;
+      } else if (x > num[m]) {
+        sx = m + 1;
+      } else {
+        dx = m;
+      }
+    }
+
+    return pos;
+  }
 }
