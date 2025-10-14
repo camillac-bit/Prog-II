@@ -21,14 +21,43 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e05;
 
+import java.util.Scanner;
+
 /** Client for the {@link ArrayUtils} class. */
 public class ArrayUtilsClient {
 
   /** . */
-  private ArrayUtilsClient() {}
+  private ArrayUtilsClient() {
+  }
 
   /*
-   * Write a client that reads 10 integers in increasing order from the standard input and prints
+   * Write a client that reads 10 integers in increasing order from the standard
+   * input and prints
    * the index of the integer passed as argument on the command line if found.
    */
+  public static int[] read() {
+    int[] a = new int[10];
+    int i = 0;
+    try (Scanner sc = new Scanner(System.in)) {
+      while (sc.hasNextInt() && i < 10) {
+        a[i] = sc.nextInt();
+        i++;
+      }
+    }
+
+    return a;
+  }
+
+  public static void main(String args[]) {
+    int[] values = read();
+
+    int x = Integer.valueOf(args[0]);
+    int index = ArrayUtils.ricercaBinaria(values, x);
+
+    if (index != -1) {
+      System.out.println(index);
+    }
+
+  }
+
 }
