@@ -62,7 +62,29 @@ public class ArrayUtils {
    * insertionPoint} (inclusive) to the end of the array, and then inserts {@code value} at {@code
    * insertionPoint}.
    */
-  static void insertAt(int[] array, int insertionPoint, int value) {}
+  /**
+   * Inserisce un intero in un array, nella posizione specificata. Il metodo è parziale.
+   * 
+   * <p> Inserisce un intero {@code value} nella posizione {@code insertionPoint} dell'array, spostando
+   * di una posizione tutti gli elementi da {@code insertionPoint} incluso fino alla fine dell'array.
+   * Muta il contenuto dell'array: viene inserito un nuovo elemento e, con lo shift a destra, l'ultimo elemento
+   * verrà eliminato. </p>
+   * 
+   * @param array l'array di interi, non può essere {@code null} e deve valere {@code array.length}>0
+   * @param insertionPoint la posizione in cui inserire {@code value}. Deve essere un valore intero \in [0;{@code array.length})
+   * @param value l'elemento da inserire. Non può essere {@code null}.
+   * 
+   */
+  static void insertAt(int[] array, int insertionPoint, int value) {
+    int prev = array[insertionPoint];
+    for(int i=insertionPoint+1;i<array.length;i++)  {
+      int curr = array[i];
+      array[i] = prev;
+      prev = curr;
+    }
+
+    array[insertionPoint]=value;
+  }
 
   /* Specify and implement a method that fills the given array with the given value. */
   static void fill(int[] array, int value) {}
