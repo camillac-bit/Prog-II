@@ -99,11 +99,27 @@ public class ArrayUtils {
    * da {@code value}.
    * 
    *
-   * @param array l'array di interi, non può essere {@code null}
-   * @param value il valore intero con cui riempire ogni posizione dell'array
+   * @param array l'array di interi, non può essere {@code null}.
+   * @param value il valore intero con cui riempire ogni posizione dell'array.
    */
-  static void fill(int[] array, int value) {}
+  static void fill(int[] array, int value) {
+    for(int i=0;i<array.length;i++){
+      array[i]=value;
+    }
+  }
 
   /* Specify and implement a method that prints the given array, one element per line. */
-  static void print(int[] array) {}
+  /**
+   * Stampa l'array. Il metodo è parziale.
+   * 
+   * Ogni elemento di {@code array} viene stampato su una riga separata.
+   * Non muta il contenuto dell'array.
+   * 
+   * @param array l'array di interi, non può essere {@code null}.
+   */
+  static void print(int[] array) {
+    for(int i=0;i<array.length;i++){
+      System.out.println(array[i]);
+    }
+  }
 }
