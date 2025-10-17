@@ -76,11 +76,15 @@ public class ArrayUtils {
    * 
    */
   static void insertAt(int[] array, int insertionPoint, int value) {
-    int prev = array[insertionPoint];
+    /* int prev = array[insertionPoint];
     for(int i=insertionPoint+1;i<array.length;i++)  {
       int curr = array[i];
       array[i] = prev;
       prev = curr;
+    } */
+
+    for(int i=array.length-1;i>insertionPoint;i--) {
+      array[i]=array[i-1];
     }
 
     array[insertionPoint]=value;
