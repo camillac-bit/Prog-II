@@ -72,7 +72,7 @@ public class ArrayUtils {
    * 
    * @param array l'array di interi, non può essere {@code null} e deve valere {@code array.length}>0
    * @param insertionPoint la posizione in cui inserire {@code value}. Deve essere un valore intero \in [0;{@code array.length})
-   * @param value l'elemento da inserire. Non può essere {@code null}.
+   * @param value l'elemento da inserire.
    * 
    */
   static void insertAt(int[] array, int insertionPoint, int value) {
@@ -91,6 +91,17 @@ public class ArrayUtils {
   }
 
   /* Specify and implement a method that fills the given array with the given value. */
+  /**
+   * Riempie l'array con il valore specificato. Il metodo è parziale.
+   * 
+   * Inserisce in ogni posizione di {@code array} il valore {@code value}.
+   * Muta il contenuto dell'array: ciascun elemento in ogni posizione dell'array verrà sovrascritto
+   * da {@code value}.
+   * 
+   *
+   * @param array l'array di interi, non può essere {@code null}
+   * @param value il valore intero con cui riempire ogni posizione dell'array
+   */
   static void fill(int[] array, int value) {}
 
   /* Specify and implement a method that prints the given array, one element per line. */
