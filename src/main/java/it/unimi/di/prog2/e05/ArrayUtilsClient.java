@@ -39,7 +39,7 @@ public class ArrayUtilsClient {
     int[] a = new int[10];
     int i = 0;
     try (Scanner sc = new Scanner(System.in)) {
-      while (sc.hasNextInt() && i < 10) {
+      while (i < 10 && sc.hasNextInt()) {
         a[i] = sc.nextInt();
         i++;
       }
