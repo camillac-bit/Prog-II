@@ -21,6 +21,8 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e06;
 
+import java.util.Scanner;
+
 /** Client code for {@link ArrayUtils}. */
 public class ArrayUtilsClient {
 
@@ -33,6 +35,21 @@ public class ArrayUtilsClient {
    * standard input and inserts them in the array if not already present,
    * keeping the array sorted and of the same size (discarding the last element
    * at every insertion). Finally, prints the array.
+   */
+  /**
+   * Gestisce un array ordinato di interi a dimensione fissa: 
+   * lo inizializza, inserisce nuovi valori letti da input mantenendo l’ordine e infine lo stampa.
+   * 
+   * Crea un array di dimensione {@code size}, ottenuta come argomento da linea di comando.
+   * Inizializza ogni posizione di {@code array} con {@link Integer#MAX_VALUE}. Poi legge degli
+   * interi da standard input e li inserisce in {@code array} se non sono già presenti,
+   * mantenendo l'array ordinato e della stessa dimensione (scartando l’ultimo elemento a ogni inserimento). 
+   * Infine viene stampato l'array.
+   * Non modifica il contenuto di {@code args}
+   * 
+   * @param args l'array contenente in prima posizione la dimensione di {@code array}. 
+   * {@code args[0]} non può essere vuoto
+   */
 
    public static void main(String[] args) {
 
@@ -54,6 +71,6 @@ public class ArrayUtilsClient {
     ArrayUtils.print(array);
   }
 
-  */
+  
 
 }
